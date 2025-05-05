@@ -1,0 +1,14 @@
+clc;
+clear;
+close all;
+% Manually set the values (replace with your own)
+%v = 4;    % Number of bits
+%fm = 1000; % Input signal frequency in Hz
+%Ts = 0.001; % Sampling interval in seconds
+% Calculate SNQPCM in dB
+SNQPCMdB = 1.8 + 6 * v;
+% Calculate SNQDM (unitless)
+SNQDM = 3 / (8 * (2 * 3.14) * (3 * fm) * (3 * Ts));
+% Display results
+disp(['SNQPCM in dB: ', num2str(SNQPCMdB)]);
+disp(['SNQDM (unitless): ', num2str(SNQDM)]);

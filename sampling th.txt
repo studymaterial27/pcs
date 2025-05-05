@@ -1,0 +1,96 @@
+clc;
+clear all;
+close all;
+
+f = 60; % Frequency in Hz
+tmin = -0.05;
+tmax = 0.05;
+t = linspace(tmin, tmax, 400); % Time vector
+
+% Original signal: cos(2*pi*f*t)
+c = cos(2 * pi * f * t);
+
+% Subplot 1: Plot original signal
+subplot(3, 2, 1);
+plot(t, c);
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Original Signal');
+
+% Subplot 2: Plot original signal with dots
+subplot(3, 2, 2);
+plot(t, c);
+hold on;
+plot(t, c, '.');
+hold off;
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Original Signal with Dots');
+
+% Sampling frequency = 800Hz
+T = 1 / 800; % Sampling period
+nmin = ceil(tmin / T);
+nmax = floor(tmax / T);
+n = nmin:nmax;
+y_800 = cos(2 * pi * f * n * T);
+
+% Subplot 3: Plot sampled signal at 800Hz
+subplot(3, 2, 3);
+plot(t, c);
+hold on;
+plot(n * T, y_800, 'o'); % Corrected plotting with 'o' for samples
+hold off;
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Sampling Frequency = 800Hz');
+
+% Sampling frequency = 400Hz
+T = 1 / 400; % Sampling period
+nmin = ceil(tmin / T);
+nmax = floor(tmax / T);
+n = nmin:nmax;
+y_400 = cos(2 * pi * f * n * T);
+
+% Subplot 4: Plot sampled signal at 400Hz
+subplot(3, 2, 4);
+plot(t, c);
+hold on;
+plot(n * T, y_400, 'o'); % Corrected plotting with 'o' for samples
+hold off;
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Sampling Frequency = 400Hz');
+
+% Sampling frequency = 120Hz
+T = 1 / 120; % Sampling period
+nmin = ceil(tmin / T);
+nmax = floor(tmax / T);
+n = nmin:nmax;
+y_120 = cos(2 * pi * f * n * T);
+
+% Subplot 5: Plot sampled signal at 120Hz
+subplot(3, 2, 5);
+plot(t, c);
+hold on;
+plot(n * T, y_120, 'o'); % Corrected plotting with 'o' for samples
+hold off;
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Sampling Frequency = 120Hz');
+
+% Sampling frequency = 70Hz
+T = 1 / 70; % Sampling period
+nmin = ceil(tmin / T);
+nmax = floor(tmax / T);
+n = nmin:nmax;
+y_70 = cos(2 * pi * f * n * T);
+
+% Subplot 6: Plot sampled signal at 70Hz
+subplot(3, 2, 6);
+plot(t, c);
+hold on;
+plot(n * T, y_70, 'o'); % Corrected plotting with 'o' for samples
+hold off;
+xlabel('Time (sec)');
+ylabel('Amplitude');
+title('Sampling Frequency = 70Hz');
