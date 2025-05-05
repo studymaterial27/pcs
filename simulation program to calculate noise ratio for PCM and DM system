@@ -1,19 +1,10 @@
-clc,
-
+clc;
 clear all;
-
-close all
-
-v=input('Enter number of bits:');
-
-fm =input('Enter input signal frequency: ");
-
-Ts=input('Enter sampling interval: ');
-
-SNQPCMdB-1.8+6*v;
-
-SNQDM (3/(8*(2*3.14) (3*fm)(3*Ts)));
-
-display (SNQPCMdB);
-
-display (SNQDM);
+close all;
+v = input('Enter number of bits: ');
+fm= input('Enter input signal frequency: ');
+T = input('Enter sampling interval: ');
+SNRQPCMdB = 1.8 + 6
+SNQDM (3/ (8* (23.14)^2* (3* fm)^2* (3* T)^2));
+display (SNRQPCMdB);
+display (SNQDM);
